@@ -5,9 +5,22 @@
 This client calls the server: **https://github.com/ddellagiacoma/introsde-2016-assignment-2-server**
 
 ## IMPLEMENTATION
-The server has a main class called **Main** that calls all the other classes of the client.
 
-The other classes of the client are **R1**, **R2**, **R3**, **R4**, **R5**, **R6**, **R7**, **R8** and **R9**.
+The client is divided in the following package and classes:
+
+* requests
+  * Main.java
+  * R1.java
+  * R2.java
+  * R3.java
+  * R4.java
+  * R5.java
+  * R6.java
+  * R7.java
+  * R8.java
+  * R9.java
+  
+The main class called **Main** that calls all the other classes of the client.
 
 Each of them send the requests specified in the delivery and print the responses into the files **client-server-json.log** and **client-server-xml.log**
 
