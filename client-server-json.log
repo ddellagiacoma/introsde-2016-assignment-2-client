@@ -1,0 +1,107 @@
+Request #1: GET https://lissonidavideapp.herokuapp.com/assignment2/person Accept: application/json
+=> Result: OK
+=> HTTP Status: 200
+[{"idPerson":1,"lastname":"Maregiot","firstname":"Davide","birthdate":"1978-09-02","measure":[]},{"idPerson":2,"lastname":"Pinco","firstname":"Pallino","birthdate":"1982-06-08","measure":[{"idMeasure":852,"value":"45","measureDefinition":{"idMeasureDef":6,"measureName":"bmi","measureType":"double"}},{"idMeasure":1504,"value":"85.3","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}}]},{"idPerson":3,"lastname":"Pippo","firstname":"Pappo","birthdate":"1990-01-01","measure":[{"idMeasure":952,"value":"72.5","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}}]},{"idPerson":4,"lastname":"Iverson","firstname":"Allen","birthdate":"1978-05-03","measure":[{"idMeasure":1905,"value":"10000","measureDefinition":{"idMeasureDef":3,"measureName":"steps","measureType":"integer"}}]},{"idPerson":5,"lastname":"Pistolato","firstname":"Gabriele","birthdate":"1992-07-02","measure":[{"idMeasure":1906,"value":"70","measureDefinition":{"idMeasureDef":5,"measureName":"heartRate","measureType":"integer"}}]},{"idPerson":6,"lastname":"Giulietti","firstname":"Giulio","birthdate":"1999-07-02","measure":[{"idMeasure":1907,"value":"80.3","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasure":1908,"value":"150.4","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double"}},{"idMeasure":1909,"value":"15000","measureDefinition":{"idMeasureDef":3,"measureName":"steps","measureType":"integer"}},{"idMeasure":1910,"value":"80.6","measureDefinition":{"idMeasureDef":4,"measureName":"bloodPressure","measureType":"double"}}]}]
+
+Request #2: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1 Accept: application/json
+=> Result: OK
+=> HTTP Status: 200
+{"idPerson":1,"lastname":"Maregiot","firstname":"Davide","birthdate":"1978-09-02","measure":[]}
+
+
+Request #3: PUT https://lissonidavideapp.herokuapp.com/assignment2/person/1 Accept: application/json Content-Type: application/json
+=> Result: OK
+=> HTTP Status: 200
+{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":null}
+
+
+Request #4: POST https://lissonidavideapp.herokuapp.com/assignment2/person Accept: application/json Content-Type: application/json
+=> Result: OK
+=> HTTP Status: 200
+{"idPerson":1112,"lastname":"Norris","firstname":"Chuck","birthdate":"1945-01-01","measure":[{"idMeasure":1927,"value":"78.9","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasure":1928,"value":"172","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double"}}]}
+
+
+Request #5: DELETE https://lissonidavideapp.herokuapp.com/assignment2/person/1112
+=> Result: OK
+=> HTTP Status: 500
+
+
+Request #9: GET https://lissonidavideapp.herokuapp.com/assignment2/measureTypes Accept: application/json
+=> Result: OK
+=> HTTP Status: 200
+[{"idMeasureDef":1,"measureName":"weight","measureType":"double"},{"idMeasureDef":2,"measureName":"height","measureType":"double"},{"idMeasureDef":3,"measureName":"steps","measureType":"integer"},{"idMeasureDef":4,"measureName":"bloodPressure","measureType":"double"},{"idMeasureDef":5,"measureName":"heartRate","measureType":"integer"},{"idMeasureDef":6,"measureName":"bmi","measureType":"double"}]
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/weight Accept: application/json
+=> Result: OK
+=> HTTP Status: 200
+[{"idMeasureHistory":1,"timestamp":"2012-12-27 23:00:00","value":"83","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"},"person":{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":[]}},{"idMeasureHistory":3,"timestamp":"2013-06-29 22:00:00","value":"75","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"},"person":{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":[]}},{"idMeasureHistory":613,"timestamp":"2011-12-09 00:00:00","value":"72","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"},"person":{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":[]}},{"idMeasureHistory":614,"timestamp":"2011-12-09 00:00:00","value":"72","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"},"person":{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":[]}},{"idMeasureHistory":615,"timestamp":"2011-12-09 00:00:00","value":"72","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"},"person":{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":[]}},{"idMeasureHistory":616,"timestamp":"2011-12-09 00:00:00","value":"72","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"},"person":{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":[]}},{"idMeasureHistory":617,"timestamp":"2011-12-09 00:00:00","value":"72","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"},"person":{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":[]}},{"idMeasureHistory":618,"timestamp":"2011-12-09 00:00:00","value":"72","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"},"person":{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measure":[]}}]
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/height Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/steps Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/bloodPressure Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/heartRate Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/bmi Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/weight Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/height Accept: application/json
+=> Result: OK
+=> HTTP Status: 200
+[{"idMeasureHistory":610,"timestamp":"2016-11-20 16:52:04","value":"145.3","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double"},"person":{"idPerson":6,"lastname":"Giulietti","firstname":"Giulio","birthdate":"1999-07-02","measure":[{"idMeasure":1907,"value":"80.3","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasure":1908,"value":"150.4","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double"}},{"idMeasure":1909,"value":"15000","measureDefinition":{"idMeasureDef":3,"measureName":"steps","measureType":"integer"}},{"idMeasure":1910,"value":"80.6","measureDefinition":{"idMeasureDef":4,"measureName":"bloodPressure","measureType":"double"}}]}}]
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/steps Accept: application/json
+=> Result: OK
+=> HTTP Status: 200
+[{"idMeasureHistory":611,"timestamp":"2016-11-20 16:52:41","value":"10000","measureDefinition":{"idMeasureDef":3,"measureName":"steps","measureType":"integer"},"person":{"idPerson":6,"lastname":"Giulietti","firstname":"Giulio","birthdate":"1999-07-02","measure":[{"idMeasure":1907,"value":"80.3","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasure":1908,"value":"150.4","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double"}},{"idMeasure":1909,"value":"15000","measureDefinition":{"idMeasureDef":3,"measureName":"steps","measureType":"integer"}},{"idMeasure":1910,"value":"80.6","measureDefinition":{"idMeasureDef":4,"measureName":"bloodPressure","measureType":"double"}}]}}]
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/bloodPressure Accept: application/json
+=> Result: OK
+=> HTTP Status: 200
+[{"idMeasureHistory":612,"timestamp":"2016-11-20 16:53:23","value":"79.0","measureDefinition":{"idMeasureDef":4,"measureName":"bloodPressure","measureType":"double"},"person":{"idPerson":6,"lastname":"Giulietti","firstname":"Giulio","birthdate":"1999-07-02","measure":[{"idMeasure":1907,"value":"80.3","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasure":1908,"value":"150.4","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double"}},{"idMeasure":1909,"value":"15000","measureDefinition":{"idMeasureDef":3,"measureName":"steps","measureType":"integer"}},{"idMeasure":1910,"value":"80.6","measureDefinition":{"idMeasureDef":4,"measureName":"bloodPressure","measureType":"double"}}]}}]
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/heartRate Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/bmi Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #7: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/bloodPressure/612 Accept: application/json
+=> Result: ERROR
+=> HTTP Status: 204
+
+
+Request #8: POST https://lissonidavideapp.herokuapp.com/assignment2/person/1/bloodPressure Accept: application/json Content-Type: application/json
+=> Result: OK
+=> HTTP Status: 200
+{"idMeasure":1930,"value":"72","measureDefinition":{"idMeasureDef":4,"measureName":"bloodPressure","measureType":"double"}}

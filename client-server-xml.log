@@ -1,0 +1,106 @@
+Request #1: GET https://lissonidavideapp.herokuapp.com/assignment2/person Accept: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><people><person><birthdate>1978-09-02T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Maregiot</lastname><HealthProfile/><firstname>Davide</firstname></person><person><birthdate>1982-06-08T00:00:00Z</birthdate><idPerson>2</idPerson><lastname>Pinco</lastname><HealthProfile><measure><idMeasure>852</idMeasure><measureDefinition><idMeasureDef>6</idMeasureDef><measureName>bmi</measureName><measureType>double</measureType></measureDefinition><value>45</value></measure><measure><idMeasure>1504</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>85.3</value></measure></HealthProfile><firstname>Pallino</firstname></person><person><birthdate>1990-01-01T00:00:00Z</birthdate><idPerson>3</idPerson><lastname>Pippo</lastname><HealthProfile><measure><idMeasure>952</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>72.5</value></measure></HealthProfile><firstname>Pappo</firstname></person><person><birthdate>1978-05-03T00:00:00Z</birthdate><idPerson>4</idPerson><lastname>Iverson</lastname><HealthProfile><measure><idMeasure>1905</idMeasure><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><value>10000</value></measure></HealthProfile><firstname>Allen</firstname></person><person><birthdate>1992-07-02T00:00:00Z</birthdate><idPerson>5</idPerson><lastname>Pistolato</lastname><HealthProfile><measure><idMeasure>1906</idMeasure><measureDefinition><idMeasureDef>5</idMeasureDef><measureName>heartRate</measureName><measureType>integer</measureType></measureDefinition><value>70</value></measure></HealthProfile><firstname>Gabriele</firstname></person><person><birthdate>1999-07-02T00:00:00Z</birthdate><idPerson>6</idPerson><lastname>Giulietti</lastname><HealthProfile><measure><idMeasure>1907</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>80.3</value></measure><measure><idMeasure>1908</idMeasure><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><value>150.4</value></measure><measure><idMeasure>1909</idMeasure><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><value>15000</value></measure><measure><idMeasure>1910</idMeasure><measureDefinition><idMeasureDef>4</idMeasureDef><measureName>bloodPressure</measureName><measureType>double</measureType></measureDefinition><value>80.6</value></measure></HealthProfile><firstname>Giulio</firstname></person></people>
+
+Request #2: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1 Accept: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><birthdate>1978-09-02T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Maregiot</lastname><HealthProfile/><firstname>Davide</firstname></person>
+
+
+Request #3: PUT https://lissonidavideapp.herokuapp.com/assignment2/person/1 Accept: application/xml Content-Type: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><firstname>Daniele</firstname></person>
+
+
+Request #4: POST https://lissonidavideapp.herokuapp.com/assignment2/person Accept: application/xml Content-Type: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1113</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Chuck</firstname></person>
+
+
+Request #5: DELETE https://lissonidavideapp.herokuapp.com/assignment2/person/1113
+=> Result: OK
+=> HTTP Status: 500
+
+
+Request #9: GET https://lissonidavideapp.herokuapp.com/assignment2/measureTypes Accept: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><measureDefinitions><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><measureDefinition><idMeasureDef>4</idMeasureDef><measureName>bloodPressure</measureName><measureType>double</measureType></measureDefinition><measureDefinition><idMeasureDef>5</idMeasureDef><measureName>heartRate</measureName><measureType>integer</measureType></measureDefinition><measureDefinition><idMeasureDef>6</idMeasureDef><measureName>bmi</measureName><measureType>double</measureType></measureDefinition></measureDefinitions>
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/weight Accept: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><healthMeasureHistories><healthMeasureHistory><idMeasureHistory>1</idMeasureHistory><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Daniele</firstname></person><timestamp>2012-12-27T23:00:00Z</timestamp><value>83</value></healthMeasureHistory><healthMeasureHistory><idMeasureHistory>3</idMeasureHistory><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Daniele</firstname></person><timestamp>2013-06-29T22:00:00Z</timestamp><value>75</value></healthMeasureHistory><healthMeasureHistory><idMeasureHistory>613</idMeasureHistory><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Daniele</firstname></person><timestamp>2011-12-09T00:00:00Z</timestamp><value>72</value></healthMeasureHistory><healthMeasureHistory><idMeasureHistory>614</idMeasureHistory><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Daniele</firstname></person><timestamp>2011-12-09T00:00:00Z</timestamp><value>72</value></healthMeasureHistory><healthMeasureHistory><idMeasureHistory>615</idMeasureHistory><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Daniele</firstname></person><timestamp>2011-12-09T00:00:00Z</timestamp><value>72</value></healthMeasureHistory><healthMeasureHistory><idMeasureHistory>616</idMeasureHistory><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Daniele</firstname></person><timestamp>2011-12-09T00:00:00Z</timestamp><value>72</value></healthMeasureHistory><healthMeasureHistory><idMeasureHistory>617</idMeasureHistory><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Daniele</firstname></person><timestamp>2011-12-09T00:00:00Z</timestamp><value>72</value></healthMeasureHistory><healthMeasureHistory><idMeasureHistory>618</idMeasureHistory><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1945-01-01T00:00:00Z</birthdate><idPerson>1</idPerson><lastname>Norris</lastname><HealthProfile/><firstname>Daniele</firstname></person><timestamp>2011-12-09T00:00:00Z</timestamp><value>72</value></healthMeasureHistory></healthMeasureHistories>
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/height Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/steps Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/bloodPressure Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/heartRate Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/bmi Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/weight Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/height Accept: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><healthMeasureHistories><healthMeasureHistory><idMeasureHistory>610</idMeasureHistory><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1999-07-02T00:00:00Z</birthdate><idPerson>6</idPerson><lastname>Giulietti</lastname><HealthProfile><measure><idMeasure>1907</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>80.3</value></measure><measure><idMeasure>1908</idMeasure><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><value>150.4</value></measure><measure><idMeasure>1909</idMeasure><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><value>15000</value></measure><measure><idMeasure>1910</idMeasure><measureDefinition><idMeasureDef>4</idMeasureDef><measureName>bloodPressure</measureName><measureType>double</measureType></measureDefinition><value>80.6</value></measure></HealthProfile><firstname>Giulio</firstname></person><timestamp>2016-11-20T16:52:04Z</timestamp><value>145.3</value></healthMeasureHistory></healthMeasureHistories>
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/steps Accept: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><healthMeasureHistories><healthMeasureHistory><idMeasureHistory>611</idMeasureHistory><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><person><birthdate>1999-07-02T00:00:00Z</birthdate><idPerson>6</idPerson><lastname>Giulietti</lastname><HealthProfile><measure><idMeasure>1907</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>80.3</value></measure><measure><idMeasure>1908</idMeasure><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><value>150.4</value></measure><measure><idMeasure>1909</idMeasure><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><value>15000</value></measure><measure><idMeasure>1910</idMeasure><measureDefinition><idMeasureDef>4</idMeasureDef><measureName>bloodPressure</measureName><measureType>double</measureType></measureDefinition><value>80.6</value></measure></HealthProfile><firstname>Giulio</firstname></person><timestamp>2016-11-20T16:52:41Z</timestamp><value>10000</value></healthMeasureHistory></healthMeasureHistories>
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/bloodPressure Accept: application/xml
+=> Result: OK
+=> HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><healthMeasureHistories><healthMeasureHistory><idMeasureHistory>612</idMeasureHistory><measureDefinition><idMeasureDef>4</idMeasureDef><measureName>bloodPressure</measureName><measureType>double</measureType></measureDefinition><person><birthdate>1999-07-02T00:00:00Z</birthdate><idPerson>6</idPerson><lastname>Giulietti</lastname><HealthProfile><measure><idMeasure>1907</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>80.3</value></measure><measure><idMeasure>1908</idMeasure><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><value>150.4</value></measure><measure><idMeasure>1909</idMeasure><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><value>15000</value></measure><measure><idMeasure>1910</idMeasure><measureDefinition><idMeasureDef>4</idMeasureDef><measureName>bloodPressure</measureName><measureType>double</measureType></measureDefinition><value>80.6</value></measure></HealthProfile><firstname>Giulio</firstname></person><timestamp>2016-11-20T16:53:23Z</timestamp><value>79.0</value></healthMeasureHistory></healthMeasureHistories>
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/heartRate Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #6: GET https://lissonidavideapp.herokuapp.com/assignment2/person/6/bmi Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
+
+
+Request #7: GET https://lissonidavideapp.herokuapp.com/assignment2/person/1/bloodPressure/612 Accept: application/xml
+=> Result: ERROR
+=> HTTP Status: 204
+
+
+Request #8: POST https://lissonidavideapp.herokuapp.com/assignment2/person/1/bloodPressure Accept: application/xml Content-Type: application/xml
+=> Result: ERROR
+=> HTTP Status: 200
