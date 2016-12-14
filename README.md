@@ -2,13 +2,7 @@
 
 ## introsde-2016-assignment-2
 
-I worked in pair with: **Davide Lissoni**
-
-The URL of my server is: **https://dellagiacomaintrosde2.herokuapp.com/sdelab**
-
-Server URL of Davide Lissoni is: **https://lissonidavideapp.herokuapp.com/assignment2**
-
-Link to Davide Lissoni's Github repository: **https://github.com/DavideLissoni/introsde-2016-assignment-2**
+This client calls the server: **https://github.com/ddellagiacoma/introsde-2016-assignment-2-server**
 
 ## CLIENT
 The server has a main class called **Main** that calls all the other classes of the client.
@@ -39,7 +33,7 @@ heroku war:deploy IntroSdeAss2.war --includes lifecoach.sqlite --app dellagiacom
 
 On the other hand, the client can be tested copying the repository in local
 ```sh
-git clone https://github.com/DanieleDellagiacoma/introsde-2016-assignment-2
+git clone https://github.com/ddellagiacoma/introsde-2016-assignment-2-client
 ```
 
 And execute it
